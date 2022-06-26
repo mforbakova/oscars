@@ -1,6 +1,6 @@
 # Oscars
 
-This application generates table with list of oscars in CSV format. 
+This application generates table with list of oscars from CSV format. 
 
 ## How to install
 

@@ -32,10 +32,10 @@ if (isset($_FILES["men"]["tmp_name"]) && ($_FILES["women"]["tmp_name"])) {
     </head>
 
 <body>
-    <div class="shadow p-3 mb-5 bg-body rounded col-sm-7">Vložte súbor s hercami:<br>
+    <div class="shadow p-3 mb-5 bg-body rounded col-sm-7">Vložte súbor s <strong>hercami</strong><br>
         <form action="" method="post" enctype="multipart/form-data">
             <input type="file" name="men" required><br>
-            Vložte súbor s herečkami:<br>
+            Vložte súbor s <strong>herečkami</strong>:<br>
             <input type="file" name="women" required>
             <input type="submit" value="Odoslať">
         </form>
@@ -51,7 +51,7 @@ if (isset($_FILES["men"]["tmp_name"]) && ($_FILES["women"]["tmp_name"])) {
     <?php if (isset($newOscar)) : ?>
         <div class="row p-4">
             <div class="col-5">
-                <table class="table table-bordered shadow p-3 mb-5 bg-body rounded">
+                <table class="table table-bordered shadow p-3 mb-5 bg-body rounded table-hover">
                     <tr>
                         <th>Rok</th>
                         <th>Muži</th>
@@ -70,7 +70,7 @@ if (isset($_FILES["men"]["tmp_name"]) && ($_FILES["women"]["tmp_name"])) {
                 </table>
             </div>
             <div class="col-sm-5">
-                <table class="table table-bordered shadow p-3 mb-5 bg-body rounded">
+                <table class="table table-bordered shadow p-3 mb-5 bg-body rounded table-hover">
                     <tr>
                         <th>Název filmu</th>
                         <th>Rok</th>
@@ -84,8 +84,8 @@ if (isset($_FILES["men"]["tmp_name"]) && ($_FILES["women"]["tmp_name"])) {
                             if (($item[OskaryClass::GENDER_WOMAN]->getYear()) !== ($item[OskaryClass::GENDER_MAN]->getYear())) {
                                 echo "<td>" . $item[OskaryClass::GENDER_WOMAN]->getYear() . "(herečka) <br>" . $item[OskaryClass::GENDER_MAN]->getYear() . "(herec)</td>";
                             } else echo "<td>" . ($item[OskaryClass::GENDER_WOMAN]->getYear()) . "</td>";
-                            echo "<td>" . $item[OskaryClass::GENDER_WOMAN]->getMovie() . "</td>";
-                            echo "<td>" . $item[OskaryClass::GENDER_MAN]->getMovie() . "</td>";
+                            echo "<td>" . $item[OskaryClass::GENDER_WOMAN]->getName() . "</td>";
+                            echo "<td>" . $item[OskaryClass::GENDER_MAN]->getName() . "</td>";
                             echo "</tr>";
                         }
                         ?>
